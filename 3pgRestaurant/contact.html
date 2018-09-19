@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+    Name: Sam Shepard
+    Date Created: 9/8/18
+    Most recent revision: 9/19/18
+-->
+<html lang="en">
+<head>
+	<title>Contact Us</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+    <link href="css/restaurantStyles.css" rel="stylesheet" type="text/css">
+	<style>
+	       .formContain {
+	           display: flex;
+	           justify-content: center;
+	       }
+	       form {
+	           color: #fff;
+	           background-color:rgba(0, 160, 120, .9);
+	       }
+
+	       .bold {
+	           font-weight: bold;
+	       }
+
+	       #submit {
+	           display: block;
+	           margin: 0 auto;
+	       }
+           
+	       /* Highlighting  what field the user is on */ 
+	       .form-style input[type=text], .form-style input[type=email], .form-style input[type=tel], textarea, select {
+	           box-sizing: border-box;
+	           border:1px solid #BEBEBE;
+	           padding: 7px;
+	           margin:0px;
+	           transition: all 0.30s ease-in-out;
+	           outline: none;  
+	       }
+
+	       .form-style input[type=text]:focus, .form-style input[type=email]:focus, .form-style input[type=tel]:focus, textarea:focus, select:focus {
+	           box-shadow: 0 0 8px #004385;
+	           border: 1px solid #004385; 
+	       
+	       }
+
+	       .form-style input[type=submit] {
+	           background: #2f3036;
+	           padding: 8px 15px 8px 15px;
+	           border: none;
+	           color: #FFFDF4;
+	       }
+
+	       .form-style input[type=submit]:hover {
+	           background-color: #19c589;
+	           box-shadow:none;
+	       }
+	       
+	</style>
+</head>
+<body>
+	<noscript>
+	<div class="errorMessage">
+		<p>Our site is best used with Javascript</p>
+	</div></noscript>
+	<div class="container">
+		<!--beginning-->
+		<header>
+			<h1 class="display-4">Queen's Eatery</h1>
+		</header><!--Nav bar-->
+		<hr>
+		<nav class="nav-fill">
+			<ul class="nav nav-pills justify-content-center">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="menu.html">Menu</a>
+				</li>
+				<li class="nav-item activeColor">
+					<a class="nav-link active" href="contact.html">Contact Us</a>
+				</li>
+			</ul>
+		</nav>
+		<hr class="bottom">
+		<!--form-->
+		<div class="formContain container">
+			<div class="col-md-10">
+				<div class="well well-sm">
+					<form action="#" class="form-horizontal" id="contactForm" method="post" name="contactForm" onsubmit="return validateForm()">
+						<fieldset>
+							<legend class="text-center">Contact us</legend> <!--text inputs-->
+							<div class="form-group form-inline">
+								<label class="bold col-md-3 col-form-label" for="name">Name:</label>
+								<div class="col-md-9">
+									<input class="form-control form-style" id="name" name="name" type="text">
+								</div>
+							</div>
+							<div class="form-group form-inline">
+								<label class="bold col-md-3 col-form-label" for="email">Email Address:</label>
+								<div class="col-md-9">
+									<input class="form-control form-style" id="email" name="email" type="email">
+								</div>
+							</div>
+							<div class="form-group form-inline">
+								<label class="bold col-md-3 col-form-label" for="phone">Phone:</label>
+								<div class="col-md-9">
+									<input class="form-control form-style" id="phone" name="phone" type="tel">
+								</div>
+							</div>
+							<div class="form-group form-inline">
+								<label class="col-md-3 col-form-label" for="addit">Additional Information</label>
+								<div class="col-md-9">
+									<textarea class="form-control form-style" id="addit" rows="4"></textarea>
+								</div>
+							</div><!--drop down inputs-->
+							<div class="form-group form-inline">
+								<label class="col-md-3 col-form-label" for="inquiry">Reasons for Inquiry</label>
+								<div class="col-md-9">
+									<select class="textInputs form-control form-inline" id="inquiry" name="inquiry">
+										<option value="default">
+											Catering
+										</option>
+										<option value="pp">
+											Private Party
+										</option>
+										<option value="feedback">
+											Feedback
+										</option>
+										<option value="other">
+											Other
+										</option>
+									</select>
+								</div>
+							</div><!--radio inputs-->
+							<div class="form-group form-inline col-md-8">
+								<label class="col-md-4 col-form-label">Have You Been to the Restaurant?</label>
+								<div class="col-md-4">
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" id="choice1" name="patronize" type="radio" value="true"> <label class="form-check-label" for="choice1">Yes</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" id="choice2" name="patronize" type="radio" value="false"> <label class="form-check-label" for="choice2">No</label>
+									</div>
+								</div>
+							</div><!--checkbox inputs-->
+							<fieldset class="form-group form-check-inline col-md-12">
+								<div class="row">
+									<legend class="col-form-label col-md-6">Best Days To Contact You:</legend>
+									<div class="col-md-6">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" id="mon" name="mon" type="checkbox" value="mon"> <label class="form-check-label" for="mon">M</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" id="tues" name="tues" type="checkbox" value="tues"> <label class="form-check-label" for="tues">T</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" id="wed" name="wed" type="checkbox" value="wed"> <label class="form-check-label" for="wed">W</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" id="thurs" name="thurs" type="checkbox" value="thurs"> <label class="form-check-label" for="thurs">T</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" id="fri" name="fri" type="checkbox" value="fri"> <label class="form-check-label" for="fri">F</label>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</fieldset><!--submit-->
+						<button class="btn btn-dark" id="submit" type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div><!--End-->
+		<footer class="col-md-12">
+			<address>
+				<br>
+				111 E 7th Street<br>
+				Charlotte, NC 28217<br>
+				+1 (704) 989-4443
+			</address>
+			<address>
+				<b>COMING SOON</b><br>
+				1515 E Irwin Lane<br>
+				Brisbane, Qld Australia<br>
+				+61 0491-570-110
+			</address>
+		</footer>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+	</script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+	</script> 
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js">
+	</script> 
+	<script src="restaurantScript.js">
+	</script>
+</body>
+</html>
